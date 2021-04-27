@@ -1,0 +1,619 @@
+/*
+@File: Emilono Template Styles
+
+* This file contains the styling for the actual template, this
+is the file you need to edit to change the look of the
+template.
+
+This files table contents are outlined below>>>>>
+
+*******************************************
+*******************************************
+
+** - Default CSS
+** - Preloader CSS
+** - Navbar CSS
+** - Coming Soon CSS
+** - Sidebar Modal CSS
+*/
+/*================================================
+Default CSS
+=================================================*/
+@import url("https://fonts.googleapis.com/css?family=Lexend+Deca&amp;display=swap");
+@import url("https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800&amp;display=swap");
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Lexend Deca", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+a:hover, a:focus {
+  text-decoration: none;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+.d-table {
+  width: 100%;
+  height: 100%;
+}
+
+.d-table-cell {
+  vertical-align: middle;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  color: #000000;
+}
+
+img {
+  max-width: 100%;
+}
+
+/*================================================
+Preloader CSS
+=================================================*/
+.preloader {
+  position: fixed;
+  left: 0;
+  width: 0;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  z-index: 9999999;
+  background-color: #170349;
+}
+
+.preloader .spinner {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  margin: 0 auto;
+  top: 45%;
+  left: 0;
+  right: 0;
+  -webkit-transform: translateY(-45%);
+          transform: translateY(-45%);
+}
+
+.preloader .double-bounce1, .preloader .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #ffffff;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+          animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.preloader .double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+          animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes sk-bounce {
+  0%, 100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+/*================================================
+Navbar CSS
+=================================================*/
+.navbar-area {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+  z-index: 99;
+  padding-top: 30px;
+}
+
+.navbar-menu {
+  text-align: right;
+}
+
+.navbar-menu .logo {
+  display: none;
+  text-align: left;
+}
+
+.navbar-menu .logo a {
+  display: inline-block;
+}
+
+.navbar-menu .burger-menu {
+  width: 35px;
+  height: auto;
+  background-color: transparent;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.navbar-menu .burger-menu span {
+  display: block;
+  width: 35px;
+  height: 3px;
+  background: #ffffff;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  border-radius: 30px;
+  margin-left: auto;
+  margin-bottom: 4px;
+}
+
+.navbar-menu .burger-menu span:nth-child(3) {
+  margin-bottom: 0;
+  width: 28px;
+  margin-left: auto;
+}
+
+.navbar-menu .burger-menu:hover span:nth-child(3) {
+  width: 35px;
+}
+
+/*================================================
+Coming Soon CSS
+=================================================*/
+.coming-soon-area {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #170349;
+}
+
+.coming-soon-area::before {
+  content: '';
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-image: url(../img/dot-bg.png);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-animation: 200s para infinite linear;
+          animation: 200s para infinite linear;
+  background-image: url(../img/dot-bg.png);
+  background-position: 0 20%, 0 100%, 0 50%, 0 100%, 0 0;
+  background-size: 2500px, 800px, 500px 200px, 1000px, 400px 260px;
+  background-repeat: repeat-x;
+}
+
+.coming-soon-content {
+  margin-left: auto;
+  max-width: 710px;
+}
+
+.coming-soon-content .logo {
+  margin-bottom: 30px;
+}
+
+.coming-soon-content .logo a {
+  display: inline-block;
+}
+
+.coming-soon-content h2 {
+  color: #ffffff;
+  font-size: 55px;
+  line-height: 1.3;
+}
+
+.coming-soon-content h2 span {
+  color: #f4b368;
+}
+
+.coming-soon-content p {
+  color: #cebafe;
+  line-height: 1.9;
+  font-size: 15px;
+  max-width: 600px;
+  margin-bottom: 0;
+  margin-top: 22px;
+}
+
+.coming-soon-content .newsletter-form {
+  position: relative;
+  margin-top: 35px;
+  max-width: 500px;
+}
+
+.coming-soon-content .newsletter-form .input-newsletter {
+  background-color: #3a2964;
+  border: none;
+  border-radius: 30px;
+  height: 55px;
+  color: #ffffff;
+  font-size: 14px;
+  display: block;
+  width: 100%;
+  padding-left: 20px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: 0;
+}
+
+.coming-soon-content .newsletter-form .input-newsletter::-webkit-input-placeholder {
+  color: #ffffff;
+}
+
+.coming-soon-content .newsletter-form .input-newsletter:-ms-input-placeholder {
+  color: #ffffff;
+}
+
+.coming-soon-content .newsletter-form .input-newsletter::-ms-input-placeholder {
+  color: #ffffff;
+}
+
+.coming-soon-content .newsletter-form .input-newsletter::placeholder {
+  color: #ffffff;
+}
+
+.coming-soon-content .newsletter-form .input-newsletter:focus {
+  padding-left: 22px;
+}
+
+.coming-soon-content .newsletter-form button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 55px;
+  line-height: 56px;
+  border-radius: 30px;
+  border: none;
+  background-color: #f4b368;
+  outline: 0;
+  color: #ffffff;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: 0 25px;
+}
+
+.coming-soon-content .newsletter-form button:hover {
+  color: #f4b368;
+  background-color: #ffffff;
+}
+
+.coming-soon-content .newsletter-form #validator-newsletter {
+  color: #ffffff;
+  font-size: 14px;
+  position: absolute;
+  left: 0;
+  bottom: -32px;
+}
+
+.coming-soon-content #timer {
+  margin-top: 50px;
+}
+
+.coming-soon-content #timer div {
+  display: inline-block;
+  text-align: center;
+  width: 130px;
+  margin-right: 15px;
+  height: 130px;
+  color: #ffffff;
+  font-size: 40px;
+  border: 14px solid #13023e;
+  border-radius: 50%;
+  background-color: #200a5c;
+  padding-top: 8px;
+}
+
+.coming-soon-content #timer div span {
+  display: block;
+  font-size: 12.5px;
+  margin-top: -5px;
+  color: #cebafe;
+  text-transform: uppercase;
+}
+
+.coming-soon-content #timer div:last-child {
+  margin-right: 0;
+}
+
+.coming-soon-image {
+  text-align: center;
+  margin-right: 30px;
+}
+
+.shape1 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.shape2 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+@-webkit-keyframes para {
+  100% {
+    background-position: -5000px 20%, -800px 95%, 500px 50%, 1000px 100%, 400px 0;
+  }
+}
+
+@keyframes para {
+  100% {
+    background-position: -5000px 20%, -800px 95%, 500px 50%, 1000px 100%, 400px 0;
+  }
+}
+
+/*================================================
+Sidebar Modal CSS
+=================================================*/
+.sidebar-modal {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 99999;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+.sidebar-modal .sidebar-modal-inner {
+  position: absolute;
+  right: -100%;
+  top: 0;
+  width: 40%;
+  overflow-y: scroll;
+  height: 100%;
+  background-color: #ffffff;
+  -webkit-transition: .7s;
+  transition: .7s;
+  z-index: 1;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.sidebar-modal .sidebar-modal-inner .close-btn {
+  display: inline-block;
+  position: absolute;
+  right: 35px;
+  top: 20px;
+  font-size: 25px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  color: #000000;
+  opacity: .66;
+  cursor: pointer;
+}
+
+.sidebar-modal .sidebar-modal-inner .close-btn:hover {
+  opacity: 1;
+}
+
+.sidebar-modal .about-area {
+  margin-bottom: 40px;
+}
+
+.sidebar-modal .about-area .title h2 {
+  margin-bottom: 0;
+  font-size: 28px;
+  font-weight: 700;
+  font-family: "Dosis", sans-serif;
+}
+
+.sidebar-modal .about-area .title p {
+  font-size: 14px;
+  margin-top: 12px;
+  line-height: 1.7;
+  color: #333333;
+}
+
+.sidebar-modal .contact-area .title {
+  margin-bottom: 25px;
+}
+
+.sidebar-modal .contact-area .title h2 {
+  margin-bottom: 0;
+  font-size: 28px;
+  font-weight: 700;
+  font-family: "Dosis", sans-serif;
+}
+
+.sidebar-modal .contact-area .contact-form {
+  max-width: 500px;
+}
+
+.sidebar-modal .contact-area .contact-form form .form-group {
+  margin-bottom: 15px;
+}
+
+.sidebar-modal .contact-area .contact-form form .form-control {
+  height: 45px;
+  border: none;
+  -webkit-box-shadow: 0 5px 28.5px 1.5px rgba(149, 152, 200, 0.15);
+          box-shadow: 0 5px 28.5px 1.5px rgba(149, 152, 200, 0.15);
+  background-color: #ffffff;
+  font-size: 13.5px;
+  padding-left: 15px;
+  color: #000000;
+}
+
+.sidebar-modal .contact-area .contact-form form textarea.form-control {
+  height: auto;
+  padding-top: 10px;
+}
+
+.sidebar-modal .contact-area .contact-form form button {
+  margin-top: 10px;
+  border: none;
+  background-color: #000000;
+  outline: 0;
+  color: #ffffff;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  border-radius: 30px;
+  -webkit-box-shadow: 0 5px 28.5px 1.5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 5px 28.5px 1.5px rgba(0, 0, 0, 0.3);
+  font-family: "Dosis", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 11px;
+}
+
+.sidebar-modal .contact-area .contact-form form button:hover {
+  color: #ffffff;
+  background-color: #f4b368;
+}
+
+.sidebar-modal .contact-area .contact-form form .help-block ul {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+}
+
+.sidebar-modal .contact-area .contact-form form .help-block.with-errors ul {
+  color: red;
+  margin-top: 7px;
+  font-size: 14px;
+}
+
+.sidebar-modal .contact-area .contact-form form #msgSubmit {
+  margin-bottom: 0;
+  font-size: 20px;
+}
+
+.sidebar-modal .contact-area .contact-form form #msgSubmit.text-danger {
+  margin-top: 8px;
+}
+
+.sidebar-modal .contact-area .contact-form form #msgSubmit.text-success {
+  margin-top: 8px;
+}
+
+.sidebar-modal .contact-area .contact-info {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.sidebar-modal .contact-area .contact-info .contact-info-content h3 {
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: "Dosis", sans-serif;
+}
+
+.sidebar-modal .contact-area .contact-info .contact-info-content h2 {
+  margin-bottom: 0;
+  font-size: 28px;
+  font-weight: 700;
+  font-family: "Dosis", sans-serif;
+}
+
+.sidebar-modal .contact-area .contact-info .contact-info-content h2 a {
+  display: inline-block;
+  color: #f4b368;
+}
+
+.sidebar-modal .contact-area .contact-info .contact-info-content h2 a:hover {
+  color: #000000;
+}
+
+.sidebar-modal .contact-area .contact-info .contact-info-content h2 a:not(:first-child) {
+  color: #000000;
+}
+
+.sidebar-modal .contact-area .contact-info .contact-info-content h2 a:not(:first-child):hover {
+  color: #f4b368;
+}
+
+.sidebar-modal .contact-area .contact-info .contact-info-content h2 span {
+  display: block;
+  color: #57647c;
+  margin-top: 8px;
+  margin-bottom: 2px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.sidebar-modal .contact-area .contact-info .contact-info-content .social {
+  padding-left: 0;
+  list-style-type: none;
+  margin-bottom: 0;
+  margin-top: 20px;
+}
+
+.sidebar-modal .contact-area .contact-info .contact-info-content .social li {
+  display: inline-block;
+  margin: 0 1px;
+}
+
+.sidebar-modal .contact-area .contact-info .contact-info-content .social li a {
+  width: 35px;
+  height: 35px;
+  line-height: 34px;
+  border: 1px solid #dadada;
+  border-radius: 50%;
+  color: #aba5a5;
+  display: block;
+}
+
+.sidebar-modal .contact-area .contact-info .contact-info-content .social li a i {
+  font-size: 14px;
+}
+
+.sidebar-modal .contact-area .contact-info .contact-info-content .social li a:hover {
+  color: #ffffff;
+  border-color: #f4b368;
+  background-color: #f4b368;
+}
+
+.sidebar-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.sidebar-modal.active .sidebar-modal-inner {
+  right: 0;
+}
+/*# sourceMappingURL=style.css.map */

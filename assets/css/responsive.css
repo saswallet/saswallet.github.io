@@ -1,0 +1,209 @@
+@media only screen and (max-width: 767px) {
+  .navbar-area {
+    padding-top: 20px;
+  }
+  .navbar-menu .logo {
+    display: block;
+  }
+  .coming-soon-area {
+    height: 100%;
+    padding-top: 200px;
+    padding-bottom: 110px;
+  }
+  .coming-soon-content {
+    text-align: center;
+    max-width: 100%;
+  }
+  .coming-soon-content .logo {
+    display: none;
+  }
+  .coming-soon-content h2 {
+    font-size: 30px;
+  }
+  .coming-soon-content p {
+    font-size: 13px;
+    max-width: 100%;
+    margin-top: 15px;
+  }
+  .coming-soon-content .newsletter-form {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .coming-soon-content .newsletter-form .input-newsletter {
+    height: 50px;
+    font-size: 13px;
+  }
+  .coming-soon-content .newsletter-form button {
+    position: relative;
+    height: auto;
+    line-height: initial;
+    font-size: 14px;
+    padding: 15px 30px;
+    margin-top: 15px;
+  }
+  .coming-soon-content .newsletter-form #validator-newsletter {
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+  .coming-soon-content #timer {
+    margin-top: 30px;
+  }
+  .coming-soon-content #timer div {
+    border-width: 10px;
+    padding-top: 10px;
+    width: 110px;
+    height: 110px;
+    font-size: 30px;
+    font-weight: 700;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 10px;
+  }
+  .coming-soon-content #timer div span {
+    margin-top: 0;
+    font-weight: normal;
+    font-size: 12px;
+  }
+  .coming-soon-image {
+    margin-right: 0;
+    margin-top: 45px;
+  }
+  .sidebar-modal .sidebar-modal-inner {
+    width: 100%;
+    padding: 30px;
+  }
+  .sidebar-modal .sidebar-modal-inner .close-btn {
+    right: 20px;
+    top: 14px;
+    font-size: 20px;
+  }
+  .sidebar-modal .about-area {
+    margin-bottom: 30px;
+  }
+  .sidebar-modal .about-area .title h2 {
+    font-size: 20px;
+  }
+  .sidebar-modal .about-area .title p {
+    font-size: 13px;
+    margin-top: 10px;
+    line-height: 1.8;
+  }
+  .sidebar-modal .contact-area .title {
+    margin-bottom: 20px;
+  }
+  .sidebar-modal .contact-area .title h2 {
+    font-size: 20px;
+  }
+  .sidebar-modal .contact-area .contact-form {
+    max-width: 100%;
+  }
+  .sidebar-modal .contact-area .contact-info {
+    margin-top: 35px;
+  }
+  .sidebar-modal .contact-area .contact-info .contact-info-content h3 {
+    font-size: 17px;
+    line-height: 1.4;
+  }
+  .sidebar-modal .contact-area .contact-info .contact-info-content h2 {
+    font-size: 22px;
+  }
+  .sidebar-modal .contact-area .contact-info .contact-info-content h2 span {
+    font-size: 13px;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .coming-soon-area .container-fluid {
+    max-width: 540px;
+  }
+  .coming-soon-content h2 {
+    font-size: 35px;
+  }
+  .coming-soon-content p {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .navbar-menu .logo {
+    display: block;
+  }
+  .coming-soon-area {
+    height: 100%;
+    padding-top: 220px;
+    padding-bottom: 130px;
+  }
+  .coming-soon-area .container-fluid {
+    max-width: 720px;
+  }
+  .coming-soon-content {
+    text-align: center;
+    max-width: 100%;
+  }
+  .coming-soon-content h2 {
+    font-size: 50px;
+  }
+  .coming-soon-content .logo {
+    display: none;
+  }
+  .coming-soon-content p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .coming-soon-content .newsletter-form {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .coming-soon-content .newsletter-form #validator-newsletter {
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+  .coming-soon-image {
+    margin-top: 45px;
+    margin-right: 0;
+  }
+  .sidebar-modal .sidebar-modal-inner {
+    width: 85%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .sidebar-modal .about-area .title h2 {
+    font-size: 24px;
+  }
+  .sidebar-modal .contact-area .title h2 {
+    font-size: 24px;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .navbar-menu .logo {
+    display: block;
+  }
+  .coming-soon-area .container-fluid {
+    max-width: 960px;
+  }
+  .coming-soon-content .logo {
+    display: none;
+  }
+  .coming-soon-content h2 {
+    font-size: 44px;
+  }
+  .coming-soon-content #timer div {
+    width: 120px;
+    height: 120px;
+    margin-right: 10px;
+    border-width: 10px;
+    padding-top: 5px;
+  }
+  .coming-soon-image {
+    margin-right: 0;
+  }
+  .sidebar-modal .sidebar-modal-inner {
+    width: 60%;
+  }
+}
+/*# sourceMappingURL=responsive.css.map */
