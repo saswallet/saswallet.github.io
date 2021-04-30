@@ -1,98 +1,222 @@
-(function($){
+(function ($) {
 	"use strict";
 
-	// Sidebar Modal
-	$(".navbar-menu .burger-menu").on('click',  function() {
-		$('.sidebar-modal').toggleClass('active');
-	});
-	$(".sidebar-modal-close-btn").on('click',  function() {
-		$('.sidebar-modal').removeClass('active');
+	$('.example-opensingle').beefup({
+	    openSingle: true,
 	});
 
-	// Count Time 
-	function makeTimer() {
-		var endTime = new Date("May 4, 2021 17:00:00 PDT");			
-		var endTime = (Date.parse(endTime)) / 1000;
-		var now = new Date();
-		var now = (Date.parse(now) / 1000);
-		var timeLeft = endTime - now;
-		var days = Math.floor(timeLeft / 86400); 
-		var hours = Math.floor((timeLeft - (days * 86400)) / 3600);
-		var minutes = Math.floor((timeLeft - (days * 86400) - (hours * 3600 )) / 60);
-		var seconds = Math.floor((timeLeft - (days * 86400) - (hours * 3600) - (minutes * 60)));
-		if (hours < "10") { hours = "0" + hours; }
-		if (minutes < "10") { minutes = "0" + minutes; }
-		if (seconds < "10") { seconds = "0" + seconds; }
-		$("#days").html(days + "<span>Days</span>");
-		$("#hours").html(hours + "<span>Hours</span>");
-		$("#minutes").html(minutes + "<span>Minutes</span>");
-		$("#seconds").html(seconds + "<span>Seconds</span>");
-	}
-	setInterval(function() { makeTimer(); }, 300);
-	
-	// Subscribe form
-	$(".newsletter-form").validator().on("submit", function (event) {
-		if (event.isDefaultPrevented()) {
-		// handle the invalid form...
-			formErrorSub();
-			submitMSGSub(false, "Please enter your email address.");
-		} else {
-			// everything looks good!
-			event.preventDefault();
-		}
-	});
-	function callbackFunction (resp) {
-		if (resp.result === "success") {
-			formSuccessSub();
-		}
-		else {
-			formErrorSub();
-		}
-	}
-	function formSuccessSub(){
-		$(".newsletter-form")[0].reset();
-		submitMSGSub(true, "Thank you for subscribing!");
-		setTimeout(function() {
-			$("#validator-newsletter").addClass('hide');
-		}, 4000)
-	}
-	function formErrorSub(){
-		$(".newsletter-form").addClass("animated shake");
-		setTimeout(function() {
-			$(".newsletter-form").removeClass("animated shake");
-		}, 1000)
-	}
-	function submitMSGSub(valid, msg){
-		if(valid){
-			var msgClasses = "validation-success";
-		} else {
-			var msgClasses = "validation-danger";
-		}
-		$("#validator-newsletter").removeClass().addClass(msgClasses).text(msg);
-	}
-	// AJAX MailChimp
-	$(".newsletter-form").ajaxChimp({
-		url: "https://envytheme.us20.list-manage.com/subscribe/post?u=60e1ffe2e8a68ce1204cd39a5&amp;id=42d6d188d9", // Your url MailChimp
-		callback: callbackFunction
-	});
+    jQuery(document).ready(function($){
 
-    // WOW JS
-	$(window).on ('load', function (){
-        if ($(".wow").length) { 
-            var wow = new WOW({
-            boxClass:     'wow',      // Animated element css class (default is wow)
-            animateClass: 'animated', // Animation css class (default is animated)
-            offset:       20,         // Distance to the element when triggering the animation (default is 0)
-            mobile:       true,       // Trigger animations on mobile devices (default is true)
-            live:         true,       // Act on asynchronously loaded content (default is true)
+
+
+        jQuery('header nav').meanmenu({
+
+            meanScreenWidth: "767",
+            meanRemoveAttrs: true,
+            meanMenuCloseSize: "30px", 
+            onePage: true
+        });
+
+
+        // SMOOTH SCROLLING
+        $(function() {
+            $("#mainmenu a[href*='#'], a[href*='#']").bind('click', function(event) {
+                var $anchor = $(this);
+                $('html, body').stop().animate({
+                    scrollTop: $($anchor.attr('href')).offset().top
+                }, 1250);
+                event.preventDefault();
+
+            });
+        });
+
+           
+        /*----------------------------
+            SCROLL TO TOP
+        ------------------------------*/
+            $(window).scroll(function () {
+                var $totalHeight = $(window).scrollTop();
+                var $scrollToTop = $(".scrolltotop");
+                if ($totalHeight > 300) {
+                    $(".scrolltotop").fadeIn();
+                } else {
+                    $(".scrolltotop").fadeOut();
+                }
+
+                if ($totalHeight + $(window).height() === $(document).height()) {
+                    $scrollToTop.css("bottom", "90px");
+                } else {
+                    $scrollToTop.css("bottom", "20px");
+                }
+            });
+
+
+          //STICKY NAV
+
+        $("#sticker").sticky({
+            topSpacing:-5,
+        });
+
+          // prettyPhoto
+
+        $(".mfp-iframe").prettyPhoto();
+
+        
+
+
+        $(".embed-responsive iframe").addClass("embed-responsive-item");
+        $(".carousel-inner .item:first-child").addClass("active");
+
+        $('[data-toggle="tooltip"]').tooltip();
+
+
+        //NICE SELECT
+
+        $('select').niceSelect();
+
+
+        /*===================================*
+            05. BACKGROUND ANIMATION JS
+            *===================================*/
+
+
+             $('.rodmap-carsoule').owlCarousel({
+                 loop: false,
+                 margin:30,
+                 nav: true,
+                 navText: ["<span class='ti-angle-double-left'>", "<span class='ti-angle-double-right'>"],
+                 responsive: {
+                     0: {
+                         items: 1,
+
+                     },
+                     380: {
+                         items: 2,
+                         margin: 15,
+                     },
+                     600: {
+                         items: 3
+                     },
+                     1000: {
+                         items: 5
+                     },
+                     1199: {
+                         items: 5
+                     }
+                 }
+             });
+
+        //CAROUSEL
+
+        $(".advisory-carosul-wrapper").owlCarousel({
+                items:4,
+                loop:true,
+                dots:true,
+                nav:false,
+                autoplay:false,
+                mouseDrag:false,
+                margin:30,
+                responsive:{
+                    0:{
+                        items:1,
+                        dots:false,
+                        nav:true,
+                         navText:["<span class='ti-angle-left'>", "<span class='ti-angle-right'>"],
+                    },
+                    600:{
+                        items:3,
+                        dots:false,
+                        autoplay:true,
+                        mouseDrag:true,
+                        nav:true,
+                        navText:["<span class='ti-angle-left'>", "<span class='ti-angle-right'>"],
+                    },
+                    1000:{
+                        items:4,
+                    }
+                }
+          });//CAROUSEL
+
+        $(".logo-carsoule").owlCarousel({
+                items:5,
+                loop:true,
+                dots:false,
+                nav:false,
+                autoplay:true,
+                mouseDrag:true,
+                margin:30,
+                responsive:{
+                    0:{
+                        items:1,
+                    },
+                    600:{
+                        items:3,
+                    },
+                    1000:{
+                        items:5,
+                    }
+                }
           });
-          wow.init();
-        }
-	});
 
-	// Preloader JS
-	$(window).on('load', function() {
-		$('.preloader').fadeOut();
-	});
-    
+        
+
+        //PREMENT DIV HOVER MOVE
+
+          $(document).on('mousemove', function(e){
+            $('.light').css({
+               left:  e.pageX - 300,
+               top:   e.pageY - 300
+            });
+        });
+
+            var el = $('.js-tilt-container');
+
+            el.on('mousemove', function(e){
+                    const {left, top} = $(this).offset();
+                    const cursPosX = e.pageX - left;
+                    const cursPosY = e.pageY - top;
+                    const cursFromCenterX = $(this).width()  - cursPosX;
+                    const cursFromCenterY = $(this).height()  - cursPosY;
+
+
+                    $(this).css('transform','perspective(500px) rotateX('+ (cursFromCenterY / 10) +'deg) rotateY('+ -(cursFromCenterX / 10) +'deg) translateZ(10px)');
+
+                  const invertedX = Math.sign(cursFromCenterX) > 0 ? -Math.abs( cursFromCenterX ) : Math.abs( cursFromCenterX );
+
+                  //Parallax transform on image
+                  $(this).find('.js-perspective-neg').css('transform','translateY('+ ( cursFromCenterY / 10) +'px) translateX('+ -(invertedX  / 10) +'px) scale(1.15)');
+
+                    $(this).removeClass('leave');
+            });
+
+                el.on('mouseleave', function(){
+                    $(this).addClass('leave');
+            });
+
+
+    });
+
+
+                    $('.tab-links a').click(function (e) {
+                      e.preventDefault()
+                      $(this).tab('show')
+                    })
+
+
+
+
+
+
+     // preloader
+            $(window).on('load', function() {
+                $('.preloader.loading').fadeOut(2000);
+                $('.preloader-wrapper').delay(1000).fadeOut('slow');
+
+                //WOW ANIMATION
+        
+               new WOW().init();
+
+            });
+
+
 }(jQuery));
